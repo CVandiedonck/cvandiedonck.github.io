@@ -2,4 +2,4 @@
 
 ***Under construction***
 
-[Link to last Resume](CV/CV_english_2023-02.pdf) 
+[Link to last Resume](CV_english_2024-02.pdf) 
