@@ -1,0 +1,24 @@
+<nav class="nav">
+    <ul>
+        {% assign current_lang = page.lang | default: site.default_lang %}
+        {% for item in site.navigation %}
+            <li>
+                {% if current_lang == 'fr' %}
+                    {% assign nav_title = item.title.fr %}
+                {% else %}
+                    {% assign nav_title = item.title.en %}
+                {% endif %}
+                
+                {% comment %} Determine if this is the current page {% endcomment %}
+                {% assign current_class = "" %}
+                {% if page.url == item.url or page.url contains item.url and item.url != "/" %}
+                    {% assign current_class = " current" %}
+                {% endif %}
+                
+                <a href="{{ item.url | relative_url }}" class="nav-link{{ current_class }}">
+                    {{ nav_title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
