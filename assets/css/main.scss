@@ -225,6 +225,35 @@ body {
     }
 }
 
+// Affiliations
+.affiliations {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    .affiliation-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        opacity: 0.9;
+
+        .logo-small {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            padding: 3px;
+        }
+    }
+}
+
 // Contact info
 .contact-info {
     display: flex;
@@ -260,6 +289,13 @@ body {
         font-weight: 600;
         transition: all 0.3s ease;
         backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            flex-shrink: 0;
+        }
 
         &:hover {
             background: rgba(255, 255, 255, 0.3);
@@ -631,6 +667,19 @@ body {
 
         h1 {
             font-size: 2rem;
+        }
+    }
+
+    .affiliations {
+        gap: 1rem;
+        
+        .affiliation-item {
+            font-size: 0.8rem;
+            
+            .logo-small {
+                width: 25px;
+                height: 25px;
+            }
         }
     }
     
