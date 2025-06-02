@@ -1,76 +1,29 @@
-# Configuration Jekyll pour Claire Vandiedonck
 title: "Claire Vandiedonck"
 subtitle: "Maître de Conférences Hors Classe (HDR) - Biostatistiques"
 description: "Site académique de Claire Vandiedonck, Maître de Conférences en Biostatistiques à l'Université Paris Cité, spécialisée en génétique et génomique des maladies autoimmunes"
 
-# URL settings
-baseurl: "" # Laisser vide si c'est votre site principal username.github.io
-url: "https://cvandiedonck.github.io" # Remplacer par votre URL
+baseurl: ""
+url: "https://cvandiedonck.github.io"
 
-# Author information
 author:
   name: "Claire Vandiedonck"
   email: "claire.vandiedonck@inserm.fr"
   email2: "claire.vandiedonck@u-paris.fr"
-  photo: "/assets/images/profile-small.jpg"  # Version optimisée pour le web
-  photo_large: "/assets/images/profile.jpg"  # Version haute résolution
+  photo: "/assets/images/profile.jpg"
   orcid: "0000-0002-6669-6923"
   github: "CVandiedonck"
-  linkedin: "" # Ajouter votre profil LinkedIn
   institution: "Institut Necker Enfants Malades (INEM)"
-  team: "IMMEDIAB"
-  address: |
-    Institut Necker Enfants Malades (INEM)
-    UM 111 - INSERM U1151 - CNRS UMR8253
-    Équipe Immediab
-    156-160 rue de Vaugirard
-    75015 PARIS, France
 
-# Jekyll settings
 markdown: kramdown
 highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
 
-# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Collections pour organiser le contenu
-collections:
-  publications:
-    output: true
-    permalink: /:collection/:name/
-  projects:
-    output: true
-    permalink: /:collection/:name/
-  posts:
-    output: true
-    permalink: /actualites/:year/:month/:day/:title/
+default_lang: "fr"
 
-# Defaults pour les collections
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Claire Vandiedonck"
-  - scope:
-      path: ""
-      type: "publications"
-    values:
-      layout: "publication"
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
-
-# Navigation principale
 navigation:
   - title:
       fr: "Accueil"
@@ -84,65 +37,11 @@ navigation:
       fr: "Recherche"
       en: "Research"
     url: "/recherche/"
-  - title:
-      fr: "Production scientifique"
-      en: "Scientific output"
-    url: "/publications/"
-  - title:
-      fr: "Enseignement & Pédagogie"
-      en: "Teaching & Pedagogy"
-    url: "/enseignement/"
-  - title:
-      fr: "Sciences & Société"
-      en: "Science & Society"
-    url: "/societe/"
-  - title:
-      fr: "Liens"
-      en: "Links"
-    url: "/liens/"
 
-# Langue par défaut
-default_lang: "fr"
-languages: ["fr", "en"]
-
-# Configuration des posts/actualités
-paginate: 10
-paginate_path: "/actualites/page:num/"
-
-# Exclusions
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
   - vendor/
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
 
-# Timezone
 timezone: Europe/Paris
-
-# SEO
-lang: fr
-google_analytics: # Ajouter votre ID Google Analytics si souhaité
-
-# Build settings
-sass:
-  style: compressed
-  sass_dir: _sass
-
-# Performance
-incremental: true
-profile: false
-
-# GitHub Pages safe mode
-safe: true
-whitelist:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
