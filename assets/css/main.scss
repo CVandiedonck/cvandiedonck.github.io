@@ -229,12 +229,25 @@ body {
 
 // Institutional logos in footer
 .institutional-logos {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-bottom: 2rem;
-    padding: 1.5rem 0;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    h4 {
+        margin-bottom: 2rem !important;
+    }
+
+    .logo-section {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 
     .logo-item {
         display: flex;
@@ -242,20 +255,33 @@ body {
         align-items: center;
         gap: 0.5rem;
         opacity: 0.8;
+        transition: opacity 0.3s ease;
+        min-width: 80px;
+
+        &:hover {
+            opacity: 1;
+        }
 
         .institutional-logo {
             width: 60px;
             height: 60px;
             object-fit: contain;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             padding: 8px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
 
         span {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #ecf0f1;
             text-align: center;
+            line-height: 1.2;
+            max-width: 80px;
         }
     }
 }
@@ -748,6 +774,26 @@ body {
             .logo-small {
                 width: 25px;
                 height: 25px;
+            }
+        }
+    }
+
+    .institutional-logos {
+        .logo-section {
+            gap: 1rem;
+        }
+
+        .logo-item {
+            min-width: 60px;
+
+            .institutional-logo {
+                width: 45px;
+                height: 45px;
+            }
+
+            span {
+                font-size: 0.65rem;
+                max-width: 60px;
             }
         }
     }
