@@ -1,6 +1,6 @@
 # Configuration Jekyll pour Claire Vandiedonck
 title: "Claire Vandiedonck"
-subtitle: "Maître de Conférences Hors Classe (HDR) "
+subtitle: "Maître de Conférences Hors Classe (HDR) - Biostatistiques"
 description: "Site académique de Claire Vandiedonck, Maître de Conférences en Biostatistiques à l'Université Paris Cité, spécialisée en génétique et génomique des maladies autoimmunes"
 
 # URL settings
@@ -12,6 +12,8 @@ author:
   name: "Claire Vandiedonck"
   email: "claire.vandiedonck@inserm.fr"
   email2: "claire.vandiedonck@u-paris.fr"
+  photo: "/assets/images/profile-small.jpg"  # Version optimisée pour le web
+  photo_large: "/assets/images/profile.jpg"  # Version haute résolution
   orcid: "0000-0002-6669-6923"
   github: "CVandiedonck"
   linkedin: "" # Ajouter votre profil LinkedIn
