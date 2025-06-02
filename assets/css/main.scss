@@ -149,7 +149,7 @@ body {
 
 // Header
 .header {
-    background: linear-gradient(45deg, var(--secondary-color), #34495e);
+    background: linear-gradient(45deg, #2c3e50, #34495e);
     color: white;
     padding: 3rem 2rem;
     text-align: center;
@@ -214,13 +214,12 @@ body {
 .institutional-logos {
     margin-bottom: 3rem;
     padding: 2rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
     h4 {
         margin-bottom: 2rem !important;
-        color: white !important;
-        font-size: 1.2rem !important;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        color: #ecf0f1 !important;
+        font-size: 1.1rem !important;
     }
 
     .logo-section {
@@ -267,12 +266,11 @@ body {
 
         span {
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: #ecf0f1;
             text-align: center;
             line-height: 1.3;
             max-width: 100px;
             font-weight: 500;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
     }
 }
