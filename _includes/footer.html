@@ -1,0 +1,74 @@
+<footer class="footer">
+    <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+            <div>
+                <h4 style="color: #ecf0f1; margin-bottom: 1rem; font-size: 1.1rem;">📄 Licence & Crédits</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6; opacity: 0.9;">
+                    {% assign current_lang = page.lang | default: site.default_lang %}
+                    {% if current_lang == 'fr' %}
+                        Le contenu de ce site est sous licence
+                    {% else %}
+                        Content on this site is licensed under
+                    {% endif %}
+                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: #3498db; text-decoration: none;">CC BY 4.0</a>
+                    {% if current_lang == 'fr' %}
+                        sauf mention contraire.
+                    {% else %}
+                        unless otherwise noted.
+                    {% endif %}
+                </p>
+                <p style="font-size: 0.85rem; opacity: 0.8;">
+                    {% if current_lang == 'fr' %}
+                        Code source disponible sur
+                    {% else %}
+                        Source code available on
+                    {% endif %}
+                    <a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io" target="_blank" style="color: #3498db; text-decoration: none;">GitHub</a>
+                </p>
+            </div>
+            
+            <div>
+                <h4 style="color: #ecf0f1; margin-bottom: 1rem; font-size: 1.1rem;">⚙️ Technique</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6; opacity: 0.9;">
+                    {% if current_lang == 'fr' %}
+                        Site généré avec
+                    {% else %}
+                        Site generated with
+                    {% endif %}
+                    <a href="https://jekyllrb.com/" target="_blank" style="color: #3498db; text-decoration: none;">Jekyll</a>
+                    {% if current_lang == 'fr' %}
+                        et hébergé sur
+                    {% else %}
+                        and hosted on
+                    {% endif %}
+                    <a href="https://pages.github.com/" target="_blank" style="color: #3498db; text-decoration: none;">GitHub Pages</a>
+                </p>
+                <p style="font-size: 0.85rem; opacity: 0.8;">
+                    {% if current_lang == 'fr' %}
+                        Design moderne & responsive
+                    {% else %}
+                        Modern & responsive design
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                &copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}. 
+                {% if current_lang == 'fr' %}
+                    Site web académique professionnel.
+                {% else %}
+                    Professional academic website.
+                {% endif %}
+            </p>
+            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem;">
+                {% if current_lang == 'fr' %}
+                    Dernière mise à jour : {{ site.time | date: '%B %Y' }}
+                {% else %}
+                    Last updated: {{ site.time | date: '%B %Y' }}
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</footer>
