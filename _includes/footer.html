@@ -3,7 +3,7 @@
         
         <!-- Logos institutionnels et financeurs -->
         <div class="institutional-logos">
-            <h4 style="color: #ecf0f1; margin-bottom: 1.5rem; text-align: center; font-size: 1.1rem;">🏢 Institutions & Financeurs</h4>
+            <h4 style="color: white; margin-bottom: 1.5rem; text-align: center; font-size: 1.2rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">🏢 Institutions & Financeurs</h4>
             
             <!-- Institutions principales -->
             <div class="logo-section">
@@ -53,47 +53,47 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
             <div>
                 <h4 style="color: white; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">📄 Licence & Crédits</h4>
-                <p style="font-size: 1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.9);">
+                <p style="font-size: 1rem; line-height: 1.6; color: white;">
                     {% assign current_lang = page.lang | default: site.default_lang %}
                     {% if current_lang == 'fr' %}
                         Le contenu de ce site est sous licence
                     {% else %}
                         Content on this site is licensed under
                     {% endif %}
-                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: #f8f9fa; text-decoration: none; font-weight: 600;">CC BY 4.0</a>
+                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: #f8f9fa; text-decoration: none; font-weight: 600; text-decoration: underline;">CC BY 4.0</a>
                     {% if current_lang == 'fr' %}
                         sauf mention contraire.
                     {% else %}
                         unless otherwise noted.
                     {% endif %}
                 </p>
-                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">
+                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem;">
                     {% if current_lang == 'fr' %}
                         Code source disponible sur
                     {% else %}
                         Source code available on
                     {% endif %}
-                    <a href="https://github.com/CVandiedonck/cvandiedonck.github.io" target="_blank" style="color: #f8f9fa; text-decoration: none; font-weight: 500;">GitHub</a>
+                    <a href="https://github.com/CVandiedonck/cvandiedonck.github.io" target="_blank" style="color: #f8f9fa; text-decoration: none; font-weight: 500; text-decoration: underline;">GitHub</a>
                 </p>
             </div>
             
             <div>
                 <h4 style="color: white; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">⚙️ Technique</h4>
-                <p style="font-size: 1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.9);">
+                <p style="font-size: 1rem; line-height: 1.6; color: white;">
                     {% if current_lang == 'fr' %}
                         Site généré avec
                     {% else %}
                         Site generated with
                     {% endif %}
-                    <a href="https://jekyllrb.com/" target="_blank" style="color: #f8f9fa; text-decoration: none; font-weight: 600;">Jekyll</a>
+                    <a href="https://jekyllrb.com/" target="_blank" style="color: #f8f9fa; text-decoration: none; font-weight: 600; text-decoration: underline;">Jekyll</a>
                     {% if current_lang == 'fr' %}
                         et hébergé sur
                     {% else %}
                         and hosted on
                     {% endif %}
-                    <a href="https://pages.github.com/" target="_blank" style="color: #f8f9fa; text-decoration: none; font-weight: 600;">GitHub Pages</a>
+                    <a href="https://pages.github.com/" target="_blank" style="color: #f8f9fa; text-decoration: none; font-weight: 600; text-decoration: underline;">GitHub Pages</a>
                 </p>
-                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">
+                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem;">
                     {% if current_lang == 'fr' %}
                         Design moderne & responsive
                     {% else %}
@@ -104,7 +104,7 @@
         </div>
         
         <div style="text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.4);">
-            <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.9);">
+            <p style="font-size: 1rem; color: white;">
                 &copy; {{ 'now' | date: '%Y' }} Claire Vandiedonck. 
                 {% if current_lang == 'fr' %}
                     Site web académique professionnel.
@@ -112,7 +112,7 @@
                     Professional academic website.
                 {% endif %}
             </p>
-            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">
+            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem;">
                 {% if current_lang == 'fr' %}
                     Dernière mise à jour : {{ site.time | date: '%B %Y' }}
                 {% else %}
