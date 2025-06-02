@@ -5,6 +5,17 @@ lang: fr
 description: "Claire Vandiedonck, Maître de Conférences en Biostatistiques à l'Université Paris Cité, spécialisée en génétique et génomique des maladies autoimmunes et du diabète de type 1."
 ---
 
+<div class="construction-banner">
+  <div class="construction-content">
+    <span class="construction-icon">🚧</span>
+    <div class="construction-text">
+      <strong>{% if page.lang == 'fr' %}Site en construction{% else %}Website under construction{% endif %}</strong>
+      <p>{% if page.lang == 'fr' %}Ce site est actuellement en cours de développement. Toutes les sections ne sont pas encore disponibles.{% else %}This website is currently under development. Not all sections are available yet.{% endif %}</p>
+    </div>
+    <span class="construction-icon">🚧</span>
+  </div>
+</div>
+
 <section class="section">
   <h2>{% if page.lang == 'fr' %}Bienvenue{% else %}Welcome{% endif %}</h2>
   
