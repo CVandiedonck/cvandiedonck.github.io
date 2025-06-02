@@ -187,7 +187,76 @@ body {
     .subtitle {
         font-size: 1.2rem;
         opacity: 0.9;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .institution-main {
+        font-size: 1rem;
+        opacity: 0.8;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+    }
+}
+
+// Affiliations
+.affiliations {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    .affiliation-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        opacity: 0.9;
+
+        .logo-small {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            padding: 3px;
+        }
+    }
+}
+
+// Institutional logos in footer
+.institutional-logos {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    .logo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        opacity: 0.8;
+
+        .institutional-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        span {
+            font-size: 0.8rem;
+            color: #ecf0f1;
+            text-align: center;
+        }
     }
 }
 
