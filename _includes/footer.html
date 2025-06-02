@@ -1,5 +1,18 @@
 <footer class="footer">
     <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+        
+        <!-- Logos institutionnels en haut -->
+        <div class="institutional-logos">
+            <div class="logo-item">
+                <img src="/assets/images/logos/inserm.png" alt="INSERM" class="institutional-logo">
+                <span>INSERM U1151</span>
+            </div>
+            <div class="logo-item">
+                <img src="/assets/images/logos/cnrs.png" alt="CNRS" class="institutional-logo">
+                <span>CNRS UMR8253</span>
+            </div>
+        </div>
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
             <div>
                 <h4 style="color: #ecf0f1; margin-bottom: 1rem; font-size: 1.1rem;">📄 Licence & Crédits</h4>
@@ -23,7 +36,7 @@
                     {% else %}
                         Source code available on
                     {% endif %}
-                    <a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io" target="_blank" style="color: #3498db; text-decoration: none;">GitHub</a>
+                    <a href="https://github.com/CVandiedonck/cvandiedonck.github.io" target="_blank" style="color: #3498db; text-decoration: none;">GitHub</a>
                 </p>
             </div>
             
@@ -55,7 +68,7 @@
         
         <div style="text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
             <p style="font-size: 0.9rem; opacity: 0.8;">
-                &copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}. 
+                &copy; {{ 'now' | date: '%Y' }} Claire Vandiedonck. 
                 {% if current_lang == 'fr' %}
                     Site web académique professionnel.
                 {% else %}
