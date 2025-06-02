@@ -2,6 +2,22 @@
     {% assign current_lang = page.lang | default: site.default_lang %}
     
     {% comment %} Bouton Français {% endcomment %}
+    <button class="active" id="btn-fr" title="Français">🇫🇷</button>
+    
+    {% comment %} Bouton Anglais (temporairement désactivé) {% endcomment %}
+    <button id="btn-en" title="English - Coming soon" style="opacity: 0.5; cursor: not-allowed;">🇬🇧</button>
+</div>
+
+<script>
+// Désactiver temporairement le bouton anglais
+document.getElementById('btn-en').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('English version coming soon! / Version anglaise bientôt disponible !');
+});
+</script><div class="language-toggle">
+    {% assign current_lang = page.lang | default: site.default_lang %}
+    
+    {% comment %} Bouton Français {% endcomment %}
     {% if current_lang == 'fr' %}
         <button class="active" id="btn-fr" title="Français">🇫🇷</button>
     {% else %}
