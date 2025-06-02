@@ -1,0 +1,52 @@
+<header class="header">
+    <div class="header-content">
+        <div class="profile-img">
+            {% if site.author.photo %}
+                <img src="{{ site.author.photo | relative_url }}" alt="{{ site.author.name }}">
+            {% else %}
+                👩‍🔬
+            {% endif %}
+        </div>
+        <h1>{{ site.author.name }}</h1>
+        
+        {% assign current_lang = page.lang | default: site.default_lang %}
+        {% if current_lang == 'fr' %}
+            <p class="subtitle">{{ site.subtitle }}</p>
+        {% else %}
+            <p class="subtitle">Associate Professor (HDR) - Biostatistics</p>
+        {% endif %}
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <span>{{ site.author.email | replace: '@', '[at]' | replace: '.', '[point]' }}</span>
+            </div>
+            {% if site.author.email2 %}
+            <div class="contact-item">
+                <span>📧</span>
+                <span>{{ site.author.email2 | replace: '@', '[at]' | replace: '.', '[point]' }}</span>
+            </div>
+            {% endif %}
+            <div class="contact-item">
+                <span>🏢</span>
+                <span><a href="https://www.institut-necker-enfants-malades.fr/" target="_blank" style="color: white; text-decoration: none;">{{ site.author.institution }}</a></span>
+            </div>
+            {% if site.author.orcid %}
+            <div class="contact-item">
+                <span>🔗</span>
+                <span><a href="https://orcid.org/{{ site.author.orcid }}" target="_blank" style="color: white; text-decoration: none;">ORCID: {{ site.author.orcid }}</a></span>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="quick-links">
+            {% if site.author.github %}
+                <a href="https://github.com/{{ site.author.github }}" target="_blank" class="quick-link">💻 GitHub</a>
+            {% endif %}
+            
+            {% if site.author.linkedin %}
+                <a href="{{ site.author.linkedin }}" target="_blank" class="quick-link">💼 LinkedIn</a>
+            {% endif %}
+        </div>
+    </div>
+</header>
