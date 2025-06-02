@@ -1,37 +1,31 @@
 <header class="header">
     <div class="header-content">
         
-        <!-- TEST 1: Image directe -->
-        <div style="background: white; padding: 10px; margin: 10px; color: black;">
-            <h4>TEST IMAGE:</h4>
-            <img src="/assets/images/profile.jpg" alt="Test" style="width: 100px; height: 100px;">
-            <p>Si vous voyez cette image ↑, le fichier fonctionne !</p>
-        </div>
-
-        <!-- TEST 2: Variables Jekyll -->
-        <div style="background: yellow; padding: 10px; margin: 10px; color: black;">
-            <h4>TEST CONFIG:</h4>
-            <p>Photo configurée: {{ site.author.photo }}</p>
-            <p>Nom: {{ site.author.name }}</p>
-        </div>
-
-        <!-- Image normale -->
+        <!-- TEST: Image hard-codée qui DOIT marcher -->
         <div class="profile-img">
-            {% if site.author.photo %}
-                <img src="{{ site.author.photo | relative_url }}" alt="{{ site.author.name }}">
-            {% else %}
-                👩‍🔬
-            {% endif %}
+            <img src="/assets/images/profile.jpg" alt="Claire Vandiedonck">
         </div>
 
-        <h1>{{ site.author.name }}</h1>
-        <p class="subtitle">{{ site.subtitle }}</p>
+        <h1>Claire Vandiedonck</h1>
+        <p class="subtitle">Maître de Conférences Hors Classe (HDR) - Biostatistiques</p>
         
         <div class="contact-info">
             <div class="contact-item">
                 <span>📧</span>
-                <span>{{ site.author.email | replace: '@', '[at]' | replace: '.', '[point]' }}</span>
+                <span>claire[point]vandiedonck[at]inserm[point]fr</span>
             </div>
+            <div class="contact-item">
+                <span>🏢</span>
+                <span><a href="https://www.institut-necker-enfants-malades.fr/" target="_blank" style="color: white; text-decoration: none;">Institut Necker Enfants Malades (INEM)</a></span>
+            </div>
+            <div class="contact-item">
+                <span>🔗</span>
+                <span><a href="https://orcid.org/0000-0002-6669-6923" target="_blank" style="color: white; text-decoration: none;">ORCID: 0000-0002-6669-6923</a></span>
+            </div>
+        </div>
+
+        <div class="quick-links">
+            <a href="https://github.com/CVandiedonck" target="_blank" class="quick-link">💻 GitHub</a>
         </div>
     </div>
 </header>
