@@ -168,18 +168,19 @@ body {
 
     .name-section {
         display: grid;
-        grid-template-columns: 130px 1fr;
+        grid-template-columns: 130px 1fr 130px;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
         margin-bottom: 0.5rem;
-        justify-items: start;
-    }
 
+        .profile-img {
+        justify-self: start;     
+        }
+    
     h1 {
-        font-size: 2.5rem;
-        margin: 0;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        justify-self: center;
+        justify-self: center;     
+        text-align: center;
+        grid-column: 2;
     }
 
     .subtitle {
@@ -212,7 +213,6 @@ body {
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
-    justify-self: start;
 
     img {
         width: 100%;
