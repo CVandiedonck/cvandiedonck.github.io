@@ -781,13 +781,26 @@ body {
 
         .profile-section,
         .title-section,
-        .contact-info {
+        .right-section {
             order: unset;
             width: 100%;
         }
 
+        .right-section {
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .header-lang-switcher {
+            justify-content: center;
+        }
+
         .contact-info {
             align-items: center;
+            
+            .contact-item {
+                justify-content: center;
+            }
         }
 
         .title-section h1 {
