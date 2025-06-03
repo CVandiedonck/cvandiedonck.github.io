@@ -794,57 +794,44 @@ body {
 .section:nth-child(1) { animation-delay: 0.1s; }
 .section:nth-child(2) { animation-delay: 0.2s; }
 .section:nth-child(3) { animation-delay: 0.3s; }
-/* RÉCUPÉRER TOUT LE CONTENU */
+/* FORCER LE BON ORDRE */
 .header-content {
     display: flex !important;
     align-items: flex-start !important;
-    justify-content: space-between !important;
-    width: 100% !important;
+    gap: 2rem !important;
     max-width: 700px !important;
     margin: 0 auto !important;
-    position: relative !important;
-    z-index: 2 !important;
-    gap: 1rem !important;
 }
 
-/* Cacher SEULEMENT les 2 premiers éléments vides */
+/* Cacher les éléments vides du début */
 .header-content > *:nth-child(1):empty,
 .header-content > *:nth-child(2):empty {
     display: none !important;
 }
 
-/* Tout le contenu principal au centre */
+/* 1ER ÉLÉMENT (photo+nom) = au début */
 .header-content > *:nth-child(3) {
-    flex: 1 !important;
+    order: -1 !important;
     display: flex !important;
-    align-items: flex-start !important;
     gap: 2rem !important;
-    justify-content: center !important;
+    flex: 1 !important;
 }
 
-/* Photo à gauche du contenu principal */
+/* Photo dans le 1er élément */
 .profile-img {
-    display: block !important;
     width: 130px !important;
-    height: 130px !important;
     flex-shrink: 0 !important;
 }
 
-/* Nom et titre au centre */
+/* Nom dans le 1er élément */
 .name-section {
-    display: block !important;
     text-align: center !important;
     flex: 1 !important;
 }
 
-.name-section h1,
-.subtitle,
-.institution-main {
-    display: block !important;
-}
-
-/* Contacts à droite */
+/* Contacts à la fin */
 .contact-info {
-    display: flex !important;
-
+    order: 10 !important;
+    width: 200px !important;
+    flex-direction: column !important;
 }
