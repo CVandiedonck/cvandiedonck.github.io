@@ -92,14 +92,9 @@ body {
     }
 }
 
-// Language toggle - MASQUÉ partout sauf dans la navigation principale
+// Language toggle - DÉSACTIVÉ car maintenant dans le header
 .language-toggle {
-    display: none !important;
-}
-
-// Exception : réactivé SEULEMENT dans la navigation principale
-.nav-item.nav-lang-switcher .language-toggle {
-    display: flex !important;
+    // Ces styles sont maintenant overridés dans .header-lang-switcher
 }
 
 // Container
@@ -196,7 +191,7 @@ body {
         }
     }
 
-    // 3. Section CONTACTS à droite (alignés correctement)
+    // 3. Section CONTACTS à droite (structure simple)
     .contact-info {
         flex: 0 0 auto;
         order: 3;
@@ -205,7 +200,6 @@ body {
         gap: 0.8rem;
         width: 200px;
         align-items: flex-end;
-        text-align: right;
 
         .contact-item {
             display: flex;
@@ -213,7 +207,6 @@ body {
             gap: 0.5rem;
             font-size: 0.9rem;
             opacity: 0.9;
-            flex-direction: row-reverse; // Icône à droite du texte
 
             svg {
                 width: 1em;
@@ -239,9 +232,100 @@ body {
             }
         }
     }
+
+    // Language switcher global - MASQUÉ dans le header
+    .language-toggle {
+        display: none !important;
+    }
+
+    // Language switcher (reste à sa place)
+    .language-toggle {
+        // Garde tes styles existants
+    }
 }
 
-// Pas de styles de navigation ici - ils sont dans nav.html
+// Navigation avec language switcher
+.nav {
+    background: #34495e;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+
+        li {
+            margin: 0;
+            
+            // Language switcher dans la navigation
+            &.nav-lang-switcher {
+                margin-left: 2rem;
+                
+                .language-toggle {
+                    display: flex !important; /* Réactive ici seulement */
+                    position: static !important;
+                    background: rgba(255, 255, 255, 0.1) !important;
+                    border-radius: 20px !important;
+                    padding: 2px !important;
+                    box-shadow: none !important;
+                    backdrop-filter: none !important;
+                    
+                    button, a {
+                        width: 28px !important;
+                        height: 28px !important;
+                        font-size: 0.9rem !important;
+                        padding: 4px !important;
+                        
+                        &.active {
+                            background: rgba(255, 255, 255, 0.2) !important;
+                        }
+                        
+                        &:hover {
+                            background: rgba(255, 255, 255, 0.15) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+        display: block;
+        padding: 1rem 1.5rem;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        &:hover, &.current {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+            transition: left 0.3s ease;
+        }
+
+        &:hover::before, &.current::before {
+            left: 0;
+        }
+    }
+}
 
 // Content
 .content {
@@ -661,6 +745,12 @@ body {
 
         .contact-info {
             align-items: center;
+            
+            .contact-item {
+                &.lang-switcher-item .language-toggle {
+                    display: flex !important;
+                }
+            }
         }
 
         .title-section h1 {
@@ -668,15 +758,8 @@ body {
         }
     }
     
-    .nav {
-        ul {
-            flex-direction: column;
-            
-            li.nav-lang-switcher {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-        }
+    .nav ul {
+        flex-direction: column;
     }
     
     .content {
