@@ -794,42 +794,56 @@ body {
 .section:nth-child(1) { animation-delay: 0.1s; }
 .section:nth-child(2) { animation-delay: 0.2s; }
 .section:nth-child(3) { animation-delay: 0.3s; }
-
-/* SOLUTION PLUS DOUCE */
+/* RÉCUPÉRER TOUT LE CONTENU */
 .header-content {
     display: flex !important;
-    justify-content: space-between !important;
     align-items: flex-start !important;
+    justify-content: space-between !important;
     width: 100% !important;
     max-width: 700px !important;
     margin: 0 auto !important;
     position: relative !important;
     z-index: 2 !important;
+    gap: 1rem !important;
 }
 
-/* NE PAS cacher, juste réorganiser */
-.header-content > *:nth-child(1),
-.header-content > *:nth-child(2) {
-    order: 10 !important;
+/* Cacher SEULEMENT les 2 premiers éléments vides */
+.header-content > *:nth-child(1):empty,
+.header-content > *:nth-child(2):empty {
     display: none !important;
 }
 
-/* Photo + nom = élément principal */
+/* Tout le contenu principal au centre */
 .header-content > *:nth-child(3) {
-    order: 2 !important;
     flex: 1 !important;
-    text-align: center !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 2rem !important;
+    justify-content: center !important;
 }
 
-/* Si les contacts sont à l'extérieur */
-.contact-info {
-    order: 3 !important;
-    width: 200px !important;
+/* Photo à gauche du contenu principal */
+.profile-img {
+    display: block !important;
+    width: 130px !important;
+    height: 130px !important;
     flex-shrink: 0 !important;
 }
 
-/* Assurer que photo et nom restent visibles */
-.profile-img, .name-section {
+/* Nom et titre au centre */
+.name-section {
+    display: block !important;
+    text-align: center !important;
+    flex: 1 !important;
+}
+
+.name-section h1,
+.subtitle,
+.institution-main {
     display: block !important;
 }
+
+/* Contacts à droite */
+.contact-info {
+    display: flex !important;
 
