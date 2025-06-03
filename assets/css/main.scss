@@ -853,3 +853,13 @@ body {
 .section:nth-child(1) { animation-delay: 0.1s; }
 .section:nth-child(2) { animation-delay: 0.2s; }
 .section:nth-child(3) { animation-delay: 0.3s; }
+
+/* Masquer l'ancien language switcher s'il existe encore */
+body > .language-toggle {
+    display: none !important;
+}
+
+/* Alternative plus large si le sélecteur ci-dessus ne suffit pas */
+.language-toggle:not(.header .language-toggle) {
+    display: none !important;
+}
