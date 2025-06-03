@@ -125,13 +125,4 @@ description: "Claire Vandiedonck, Associate Professor in Biostatistics at Univer
     </div>
   </div>
 
-  <div class="address-section">
-    <h3>{% if page.lang == 'fr' %}📍 Coordonnées{% else %}📍 Contact Information{% endif %}</h3>
-    <p><strong>{% if page.lang == 'fr' %}Adresse{% else %}Address{% endif %} :</strong><br>
-    Institut Necker Enfants Malades (INEM)<br>
-    UM 111 - INSERM U1151 - CNRS UMR8253<br>
-    {% if page.lang == 'fr' %}Équipe Immediab{% else %}Immediab Team{% endif %}<br>
-    156-160 rue de Vaugirard<br>
-    75015 PARIS, France</p>
-  </div>
-</section>
+  </section>
