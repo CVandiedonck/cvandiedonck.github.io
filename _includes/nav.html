@@ -1,72 +1,116 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.default_lang | default: 'fr' }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-    
-    <!-- SEO -->
-    <meta name="description" content="{{ page.description | default: site.description }}">
-    <meta name="author" content="{{ site.author.name }}">
-    <link rel="canonical" href="{{ page.url | absolute_url }}">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
-    <meta property="og:description" content="{{ page.description | default: site.description }}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:type" content="website">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-    <!-- NOUVEAU CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/header-background.css' | relative_url }}">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="{{ page.lang | default: site.default_lang | default: 'fr' }}">
-    
-    <div class="container">
-        <!-- Bannière de construction -->
-        <div class="construction-banner">
-            <div class="construction-content">
-                <span class="construction-icon">🚧</span>
-                <div class="construction-text">
-                    <strong>{% if page.lang == 'fr' %}Site en construction{% else %}Website under construction{% endif %}</strong>
-                    <p>{% if page.lang == 'fr' %}Ce site est actuellement en cours de développement. Toutes les sections ne sont pas encore disponibles.{% else %}This website is currently under development. Not all sections are available yet.{% endif %}</p>
-                </div>
-                <span class="construction-icon">🚧</span>
-            </div>
-        </div>
-        
-        {% include nav.html %}
-        {% include header.html %}
-        
-        <main class="content">
-            {{ content }}
-        </main>
-        
-        {% include footer.html %}
-    </div>
-
-    <!-- JavaScript -->
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    
-    {% if site.google_analytics %}
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-    </script>
+<nav class="main-navigation">
+  {% assign current_lang = page.lang | default: site.default_lang %}
+  
+  <ul class="nav-list">
+    {% if current_lang == 'fr' %}
+      <!-- Navigation française -->
+      <li class="nav-item">
+        <a href="/" class="nav-link {% if page.ref == 'home' %}active{% endif %}">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a href="/parcours" class="nav-link {% if page.ref == 'journey' %}active{% endif %}">Parcours</a>
+      </li>
+      <li class="nav-item">
+        <a href="/recherche" class="nav-link {% if page.ref == 'research' %}active{% endif %}">Recherche</a>
+      </li>
+      <li class="nav-item">
+        <a href="/production-scientifique" class="nav-link {% if page.ref == 'scientific-output' %}active{% endif %}">Production Scientifique</a>
+      </li>
+      <li class="nav-item">
+        <a href="/enseignement" class="nav-link {% if page.ref == 'teaching' %}active{% endif %}">Enseignement & Pédagogie</a>
+      </li>
+      <li class="nav-item">
+        <a href="/sciences-societe" class="nav-link {% if page.ref == 'science-society' %}active{% endif %}">Sciences & Société</a>
+      </li>
+      <li class="nav-item">
+        <a href="/liens" class="nav-link {% if page.ref == 'links' %}active{% endif %}">Liens</a>
+      </li>
+      <li class="nav-item">
+        <a href="/contact" class="nav-link {% if page.ref == 'contact' %}active{% endif %}">Contact</a>
+      </li>
+    {% else %}
+      <!-- Navigation anglaise -->
+      <li class="nav-item">
+        <a href="/en/" class="nav-link {% if page.ref == 'home' %}active{% endif %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/journey" class="nav-link {% if page.ref == 'journey' %}active{% endif %}">Journey</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/research" class="nav-link {% if page.ref == 'research' %}active{% endif %}">Research</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/scientific-output" class="nav-link {% if page.ref == 'scientific-output' %}active{% endif %}">Scientific Output</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/teaching" class="nav-link {% if page.ref == 'teaching' %}active{% endif %}">Teaching & Pedagogy</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/science-society" class="nav-link {% if page.ref == 'science-society' %}active{% endif %}">Science & Society</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/links" class="nav-link {% if page.ref == 'links' %}active{% endif %}">Links</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/contact" class="nav-link {% if page.ref == 'contact' %}active{% endif %}">Contact</a>
+      </li>
     {% endif %}
-</body>
-</html>
+  </ul>
+</nav>
+
+<!-- Styles originaux -->
+<style>
+.main-navigation {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: rgba(52, 152, 219, 0.1);
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background: #3498db;
+  color: white;
+}
+
+.nav-link.active:hover {
+  background: #2980b9;
+  color: w
