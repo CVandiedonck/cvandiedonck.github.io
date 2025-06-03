@@ -97,6 +97,16 @@ body {
     // Ces styles sont maintenant overridés dans .header-lang-switcher
 }
 
+// Language switcher - décalé pour éviter les contacts
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 280px; // Décalé vers la gauche
+    z-index: 1000;
+    // garde tes autres styles
+}
+
+
 // Container
 .container {
     max-width: 1200px;
