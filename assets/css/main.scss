@@ -147,12 +147,11 @@ body {
     margin-bottom: 20px;
 }
 
-// Header pleine largeur
+// Header pleine largeur - STRUCTURE SIMPLE
 .header {
     background: linear-gradient(45deg, #2c3e50, #34495e);
     color: white;
     padding: 1.5rem;
-    text-align: center;
     position: relative;
     overflow: hidden;
     width: 100vw;
@@ -164,81 +163,71 @@ body {
         z-index: 2;
         max-width: 700px;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: 130px 1fr 130px; // ← Photo | Texte centré | Vide
-        gap: 2rem;
-        align-items: center; // ← Tout centré verticalement
-        min-height: 140px; // ← Hauteur minimale pour la photo
-    }
-}
-
- // Texte - colonne 2 (centre)
-.name-section {
-    grid-column: 2; // ← Colonne du milieu
-    grid-row: 1;
-    text-align: center; // ← Tout centré
-    
-    h1 {
-        font-size: 2.5rem;
-        margin: 0 0 0.3rem 0;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 3rem;
     }
 
-    .subtitle {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        margin-bottom: 0.3rem;
-    }
-
-    .institution-main {
-        font-size: 1rem;
-        opacity: 0.8;
-        margin-bottom: 1rem;
-        font-style: italic;
-    }
-}
-
-// Profile image - colonne 1 (gauche)
-.profile-img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    background: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: #999;
-    transition: transform 0.3s ease;
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-    grid-column: 1; // ← Première colonne
-    grid-row: 1; // ← Une seule ligne
-    justify-self: start; // ← Collé à gauche
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .profile-img {
+        width: 130px;
+        height: 130px;
         border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        background: #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: #999;
+        transition: transform 0.3s ease;
+        overflow: hidden;
+        position: relative;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 
-    &:hover {
-        transform: scale(1.05);
+    .name-section {
+        flex: 1;
+        text-align: center;
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.3rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0.3rem;
+        }
+
+        .institution-main {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
     }
 }
 
-// Contact info - reste dans la colonne 2 aussi
+// Contact info
 .contact-info {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
     margin-top: 1rem;
-    grid-column: 2; // ← Colonne du milieu
-    grid-row: 2; // ← Ligne suivante
 
     .contact-item {
         display: flex;
@@ -753,13 +742,13 @@ body {
     .header {
         padding: 2rem 1rem;
 
-        h1 {
-            font-size: 2rem;
-        }
-
-        .name-section {
+        .header-content {
             flex-direction: column;
             gap: 1.5rem;
+        }
+
+        .name-section h1 {
+            font-size: 2rem;
         }
     }
     
