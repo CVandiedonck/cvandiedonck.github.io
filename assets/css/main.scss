@@ -92,46 +92,9 @@ body {
     }
 }
 
-// Language toggle
+// Language toggle - DÉSACTIVÉ car maintenant dans le header
 .language-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 50px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    overflow: hidden;
-    display: flex;
-    padding: 5px;
-
-    button, a {
-        border: none;
-        background: transparent;
-        padding: 8px 12px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border-radius: 50px;
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        text-decoration: none;
-
-        &.active {
-            background: var(--primary-color);
-            transform: scale(1.1);
-            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
-        }
-
-        &:hover {
-            transform: scale(1.05);
-            background: rgba(52, 152, 219, 0.1);
-        }
-    }
+    // Ces styles sont maintenant overridés dans .header-lang-switcher
 }
 
 // Container
@@ -246,38 +209,55 @@ body {
         
         .language-toggle {
             position: static !important; /* Override du position fixed */
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 25px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            padding: 3px;
             top: auto !important;
             right: auto !important;
+            z-index: auto !important;
+            background: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(10px);
+            border-radius: 25px !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2) !important;
+            padding: 3px !important;
+            overflow: hidden;
+            display: flex !important;
             
             button, a {
-                width: 32px;
-                height: 32px;
-                font-size: 1rem;
+                border: none !important;
+                background: transparent !important;
+                padding: 8px 12px !important;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border-radius: 50px !important;
+                font-size: 1rem !important;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 32px !important;
+                height: 32px !important;
+                text-decoration: none;
                 
                 &.active {
-                    background: rgba(255, 255, 255, 0.9);
-                    color: var(--secondary-color);
+                    background: rgba(255, 255, 255, 0.9) !important;
+                    color: var(--secondary-color) !important;
+                    transform: scale(1.1);
+                    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
                 }
                 
                 &:hover {
-                    background: rgba(255, 255, 255, 0.3);
+                    transform: scale(1.05);
+                    background: rgba(255, 255, 255, 0.3) !important;
                 }
             }
         }
     }
 
-    // Contact info ajustée
+    // Contact info ajustée - ALIGNÉE À DROITE
     .contact-info {
         display: flex;
         flex-direction: column;
         gap: 0.6rem;
-        align-items: flex-end;
+        align-items: flex-end; /* Alignement à droite */
         width: 100%;
+        text-align: right; /* Texte aligné à droite */
 
         .contact-item {
             display: flex;
@@ -285,7 +265,8 @@ body {
             gap: 0.5rem;
             font-size: 0.85rem;
             opacity: 0.9;
-            justify-content: flex-end;
+            justify-content: flex-end; /* Contenu vers la droite */
+            flex-direction: row-reverse; /* Icône à droite du texte */
 
             svg {
                 width: 1em;
