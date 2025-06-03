@@ -1,5 +1,93 @@
-<!-- Bouton temporairement retiré pour diagnostic -->
-<div class="language-toggle">
-    <button class="active" id="btn-fr" title="Français">🇫🇷</button>
-    <!-- EN button disabled during debugging -->
+<!-- Sélecteur de langue avec drapeaux -->
+<div class="lang-switcher">
+  {% assign current_lang = page.lang | default: site.default_lang %}
+  {% assign current_ref = page.ref | default: 'home' %}
+  
+  {% if current_lang == 'fr' %}
+    <!-- Bouton vers anglais -->
+    {% assign target_page = site.pages | where: "lang", "en" | where: "ref", current_ref | first %}
+    {% if target_page %}
+      <a href="{{ target_page.url | relative_url }}" class="lang-switch" title="Switch to English">
+        <span class="flag flag-en">🇬🇧</span>
+        <span class="lang-text">{{ site.t.fr.lang_switch }}</span>
+      </a>
+    {% else %}
+      <a href="/en/" class="lang-switch" title="Switch to English">
+        <span class="flag flag-en">🇬🇧</span>
+        <span class="lang-text">{{ site.t.fr.lang_switch }}</span>
+      </a>
+    {% endif %}
+  {% else %}
+    <!-- Bouton vers français -->
+    {% assign target_page = site.pages | where: "lang", "fr" | where: "ref", current_ref | first %}
+    {% if target_page %}
+      <a href="{{ target_page.url | relative_url }}" class="lang-switch" title="Passer au français">
+        <span class="flag flag-fr">🇫🇷</span>
+        <span class="lang-text">{{ site.t.en.lang_switch }}</span>
+      </a>
+    {% else %}
+      <a href="/" class="lang-switch" title="Passer au français">
+        <span class="flag flag-fr">🇫🇷</span>
+        <span class="lang-text">{{ site.t.en.lang_switch }}</span>
+      </a>
+    {% endif %}
+  {% endif %}
 </div>
+
+<style>
+.lang-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.lang-switch:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+.flag {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.lang-text {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .lang-switcher {
+    top: 0.5rem;
+    right: 1rem;
+  }
+  
+  .lang-switch {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .lang-text {
+    display: none;
+  }
+}
+</style>
