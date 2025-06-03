@@ -795,7 +795,7 @@ body {
 .section:nth-child(2) { animation-delay: 0.2s; }
 .section:nth-child(3) { animation-delay: 0.3s; }
 
-/* FORCER L'ORDRE CORRECT */
+/* SOLUTION PLUS DOUCE */
 .header-content {
     display: flex !important;
     justify-content: space-between !important;
@@ -803,30 +803,33 @@ body {
     width: 100% !important;
     max-width: 700px !important;
     margin: 0 auto !important;
+    position: relative !important;
+    z-index: 2 !important;
 }
 
-/* Cacher les 2 premiers éléments indésirables */
+/* NE PAS cacher, juste réorganiser */
 .header-content > *:nth-child(1),
 .header-content > *:nth-child(2) {
+    order: 10 !important;
     display: none !important;
 }
 
-/* Le 3ème élément (photo+nom) = TOUTE la largeur */
+/* Photo + nom = élément principal */
 .header-content > *:nth-child(3) {
+    order: 2 !important;
     flex: 1 !important;
-    display: flex !important;
-    align-items: flex-start !important;
-    gap: 2rem !important;
+    text-align: center !important;
 }
 
-/* Les contacts en dehors - les ramener à droite */
+/* Si les contacts sont à l'extérieur */
 .contact-info {
-    position: absolute !important;
-    right: 0 !important;
-    top: 0 !important;
+    order: 3 !important;
     width: 200px !important;
+    flex-shrink: 0 !important;
 }
-.section:nth-child(4) { animation-delay: 0.4s; }
-.section:nth-child(5) { animation-delay: 0.5s; }
-.section:nth-child(6) { animation-delay: 0.6s; }
-.section:nth-child(7) { animation-delay: 0.7s; }
+
+/* Assurer que photo et nom restent visibles */
+.profile-img, .name-section {
+    display: block !important;
+}
+
