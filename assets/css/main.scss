@@ -92,9 +92,9 @@ body {
     }
 }
 
-// Language toggle - DÉSACTIVÉ car maintenant dans le header
+// Language toggle - MASQUÉ par défaut, réactivé dans la navigation
 .language-toggle {
-    // Ces styles sont maintenant overridés dans .header-lang-switcher
+    display: none !important;
 }
 
 // Container
@@ -191,7 +191,7 @@ body {
         }
     }
 
-    // 3. Section CONTACTS à droite (structure simple)
+    // 3. Section CONTACTS à droite
     .contact-info {
         flex: 0 0 auto;
         order: 3;
@@ -232,16 +232,6 @@ body {
             }
         }
     }
-
-    // Language switcher global - MASQUÉ dans le header
-    .language-toggle {
-        display: none !important;
-    }
-
-    // Language switcher (reste à sa place)
-    .language-toggle {
-        // Garde tes styles existants
-    }
 }
 
 // Navigation avec language switcher
@@ -276,19 +266,34 @@ body {
                     padding: 2px !important;
                     box-shadow: none !important;
                     backdrop-filter: none !important;
+                    top: auto !important;
+                    right: auto !important;
+                    z-index: auto !important;
                     
                     button, a {
                         width: 28px !important;
                         height: 28px !important;
                         font-size: 0.9rem !important;
                         padding: 4px !important;
+                        border: none !important;
+                        background: transparent !important;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        border-radius: 50px !important;
+                        display: flex !important;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        color: white;
                         
                         &.active {
                             background: rgba(255, 255, 255, 0.2) !important;
+                            transform: scale(1.1);
                         }
                         
                         &:hover {
                             background: rgba(255, 255, 255, 0.15) !important;
+                            transform: scale(1.05);
                         }
                     }
                 }
@@ -745,12 +750,6 @@ body {
 
         .contact-info {
             align-items: center;
-            
-            .contact-item {
-                &.lang-switcher-item .language-toggle {
-                    display: flex !important;
-                }
-            }
         }
 
         .title-section h1 {
@@ -758,8 +757,15 @@ body {
         }
     }
     
-    .nav ul {
-        flex-direction: column;
+    .nav {
+        ul {
+            flex-direction: column;
+            
+            li.nav-lang-switcher {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
     }
     
     .content {
