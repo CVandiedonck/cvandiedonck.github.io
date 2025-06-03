@@ -191,82 +191,22 @@ body {
         }
     }
 
-    // 3. Section DROITE (language switcher + contacts)
-    .right-section {
+    // 3. Section CONTACTS à droite (avec language switcher intégré)
+    .contact-info {
         flex: 0 0 auto;
         order: 3;
         display: flex;
         flex-direction: column;
+        gap: 0.8rem;
+        width: 200px;
         align-items: flex-end;
-        gap: 1rem;
-        width: 220px;
-    }
-
-    // Language switcher dans le header (plus en position fixed)
-    .header-lang-switcher {
-        display: flex;
-        justify-content: flex-end;
-        
-        .language-toggle {
-            position: static !important; /* Override du position fixed */
-            top: auto !important;
-            right: auto !important;
-            z-index: auto !important;
-            background: rgba(255, 255, 255, 0.2) !important;
-            backdrop-filter: blur(10px);
-            border-radius: 25px !important;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2) !important;
-            padding: 3px !important;
-            overflow: hidden;
-            display: flex !important;
-            
-            button, a {
-                border: none !important;
-                background: transparent !important;
-                padding: 8px 12px !important;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                border-radius: 50px !important;
-                font-size: 1rem !important;
-                display: flex !important;
-                align-items: center;
-                justify-content: center;
-                width: 32px !important;
-                height: 32px !important;
-                text-decoration: none;
-                
-                &.active {
-                    background: rgba(255, 255, 255, 0.9) !important;
-                    color: var(--secondary-color) !important;
-                    transform: scale(1.1);
-                    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
-                }
-                
-                &:hover {
-                    transform: scale(1.05);
-                    background: rgba(255, 255, 255, 0.3) !important;
-                }
-            }
-        }
-    }
-
-    // Contact info ajustée - ALIGNÉE À DROITE
-    .contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-        align-items: flex-end; /* Alignement à droite */
-        width: 100%;
-        text-align: right; /* Texte aligné à droite */
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             opacity: 0.9;
-            justify-content: flex-end; /* Contenu vers la droite */
-            flex-direction: row-reverse; /* Icône à droite du texte */
 
             svg {
                 width: 1em;
@@ -290,7 +230,33 @@ body {
                     opacity: 0.8;
                 }
             }
+            
+            // Style spécial pour le language switcher
+            &.lang-switcher-item {
+                margin-top: 0.5rem;
+                
+                .language-toggle {
+                    position: static !important;
+                    top: auto !important;
+                    right: auto !important;
+                    z-index: auto !important;
+                    background: rgba(255, 255, 255, 0.2) !important;
+                    border-radius: 20px !important;
+                    padding: 2px !important;
+                    
+                    button, a {
+                        width: 28px !important;
+                        height: 28px !important;
+                        font-size: 0.9rem !important;
+                    }
+                }
+            }
         }
+    }
+
+    // Language switcher global - MASQUÉ
+    .language-toggle {
+        display: none !important;
     }
 
     // Language switcher (reste à sa place)
@@ -762,25 +728,18 @@ body {
 
         .profile-section,
         .title-section,
-        .right-section {
+        .contact-info {
             order: unset;
             width: 100%;
-        }
-
-        .right-section {
-            align-items: center;
-            gap: 1.5rem;
-        }
-        
-        .header-lang-switcher {
-            justify-content: center;
         }
 
         .contact-info {
             align-items: center;
             
             .contact-item {
-                justify-content: center;
+                &.lang-switcher-item .language-toggle {
+                    display: flex !important;
+                }
             }
         }
 
@@ -853,13 +812,3 @@ body {
 .section:nth-child(1) { animation-delay: 0.1s; }
 .section:nth-child(2) { animation-delay: 0.2s; }
 .section:nth-child(3) { animation-delay: 0.3s; }
-
-/* Masquer l'ancien language switcher s'il existe encore */
-body > .language-toggle {
-    display: none !important;
-}
-
-/* Alternative plus large si le sélecteur ci-dessus ne suffit pas */
-.language-toggle:not(.header .language-toggle) {
-    display: none !important;
-}
