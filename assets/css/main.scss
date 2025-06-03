@@ -241,7 +241,7 @@ body {
     }
 }
 
-// Navigation de base (pour compatibilité)
+// Navigation avec language switcher
 .nav {
     background: #34495e;
     padding: 0;
@@ -260,6 +260,51 @@ body {
 
         li {
             margin: 0;
+            
+            // Language switcher dans la navigation
+            &.nav-lang-switcher {
+                margin-left: 2rem;
+                
+                .language-toggle {
+                    display: flex !important; /* Réactive ici seulement */
+                    position: static !important;
+                    background: rgba(255, 255, 255, 0.1) !important;
+                    border-radius: 20px !important;
+                    padding: 2px !important;
+                    box-shadow: none !important;
+                    backdrop-filter: none !important;
+                    top: auto !important;
+                    right: auto !important;
+                    z-index: auto !important;
+                    
+                    button, a {
+                        width: 28px !important;
+                        height: 28px !important;
+                        font-size: 0.9rem !important;
+                        padding: 4px !important;
+                        border: none !important;
+                        background: transparent !important;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        border-radius: 50px !important;
+                        display: flex !important;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        color: white;
+                        
+                        &.active {
+                            background: rgba(255, 255, 255, 0.2) !important;
+                            transform: scale(1.1);
+                        }
+                        
+                        &:hover {
+                            background: rgba(255, 255, 255, 0.15) !important;
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
         }
     }
 
