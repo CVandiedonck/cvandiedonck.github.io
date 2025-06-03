@@ -163,8 +163,8 @@ body {
         z-index: 2;
         max-width: 700px;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: 130px 1fr 200px;
+        display: grid !important;
+        grid-template-columns: 130px 1fr 200px !important;
         gap: 2rem;
         align-items: start;
     }
