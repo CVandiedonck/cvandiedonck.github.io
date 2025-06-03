@@ -228,21 +228,64 @@ body {
         }
     }
 
-    // 3. Section CONTACTS à droite
-    .contact-info {
+    // 3. Section DROITE (language switcher + contacts)
+    .right-section {
         flex: 0 0 auto;
         order: 3;
         display: flex;
         flex-direction: column;
-        gap: 0.8rem;
-        width: 200px;
+        align-items: flex-end;
+        gap: 1rem;
+        width: 220px;
+    }
+
+    // Language switcher dans le header (plus en position fixed)
+    .header-lang-switcher {
+        display: flex;
+        justify-content: flex-end;
+        
+        .language-toggle {
+            position: static !important; /* Override du position fixed */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            padding: 3px;
+            top: auto !important;
+            right: auto !important;
+            
+            button, a {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+                
+                &.active {
+                    background: rgba(255, 255, 255, 0.9);
+                    color: var(--secondary-color);
+                }
+                
+                &:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+    }
+
+    // Contact info ajustée
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: flex-end;
+        width: 100%;
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.9;
+            justify-content: flex-end;
 
             svg {
                 width: 1em;
