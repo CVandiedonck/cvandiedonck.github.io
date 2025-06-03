@@ -5,26 +5,6 @@ lang: fr
 ref: home
 description: "Claire Vandiedonck, Maître de Conférences en Biostatistiques à l'Université Paris Cité, spécialisée en génétique et génomique des maladies autoimmunes et du diabète de type 1."
 ---
-<div class="header">
-    <div class="header-content">
-        <div class="profile-img">
-            <img src="path/to/your/photo.jpg" alt="Photo">
-        </div>
-        <div class="name-section">
-            <h1>Votre Nom</h1>
-            <div class="subtitle">Maître de Conférences</div>
-            <div class="institution-main">Votre Université</div>
-        </div>
-        <div class="contact-info">
-            <div class="contact-item">🆔 ORCID</div>
-            <div class="contact-item">📧 GitHub</div>
-            <div class="contact-item">💼 LinkedIn</div>
-        </div>
-    </div>
-</div>
-
-
-
 <div class="construction-banner">
   <div class="construction-content">
     <span class="construction-icon">🚧</span>
