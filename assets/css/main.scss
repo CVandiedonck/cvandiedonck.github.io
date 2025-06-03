@@ -167,20 +167,19 @@ body {
     }
 
     .name-section {
-        display: grid;
-        grid-template-columns: 130px 1fr 130px;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 0.5rem;
-
-        .profile-img {
-        justify-self: start;     
+       display: grid;
+       grid-template-columns: 130px 1fr;
+       align-items: center;
+        gap: 2rem;
+        margin-bottom: 0.5rem;  
         }
     
     h1 {
-        justify-self: center;     
-        text-align: center;
-        grid-column: 2;
+       font-size: 2.5rem;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        text-align: center;           
+        width: 100%;
     }
 }
     .subtitle {
@@ -194,6 +193,7 @@ body {
         opacity: 0.8;
         margin-bottom: 1rem;
         font-style: italic;
+        text-align: center;
     }
 }
 
