@@ -151,7 +151,7 @@ body {
 .header {
     background: linear-gradient(45deg, #2c3e50, #34495e);
     color: white;
-    padding: 3rem 2rem;
+    padding: 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -162,22 +162,24 @@ body {
     .header-content {
         position: relative;
         z-index: 2;
-        max-width: 1200px;
+        max-width: 900px;
         margin: 0 auto;
     }
 
     .name-section {
-        display: flex;
+        display: grid;
+        grid-template-columns: auto 1fr;
         align-items: center;
-        justify-content: center;
-        gap: 3rem;
+        gap: 2rem;
         margin-bottom: 1rem;
+        justify-items: start;
     }
 
     h1 {
         font-size: 2.5rem;
         margin: 0;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        justify-self: center;
     }
 
     .subtitle {
@@ -196,8 +198,8 @@ body {
 
 // Profile image
 .profile-img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: 4px solid rgba(255, 255, 255, 0.3);
     background: #ddd;
@@ -210,6 +212,7 @@ body {
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
+    justify-self: start;
 
     img {
         width: 100%;
