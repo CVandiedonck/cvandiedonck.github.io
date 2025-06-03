@@ -1,3 +1,8 @@
+title: Claire Vandiedonck
+author:
+  name: Claire Vandiedonck
+  photo: /assets/images/profile.jpg
+
 # Configuration multilingue
 languages: ["fr", "en"]
 default_lang: "fr"
