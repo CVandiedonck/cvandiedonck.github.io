@@ -7,10 +7,15 @@
             </div>
             <h1>Claire Vandiedonck</h1>
         </div>
-        
-        <p class="subtitle">Maître de Conférences Hors Classe (HDR) - Biostatistiques</p>
-        <p class="institution-main">Université Paris Cité - Faculté de Santé - UFR de Médecine</p>
-        
+
+        {% if page.lang == 'fr' %}
+            <p class="subtitle">Maître de Conférences Hors Classe (HDR) - Biostatistiques</p>
+            <p class="institution-main">Université Paris Cité - Faculté de Santé - UFR de Médecine</p>
+        {% else %}
+            <p class="subtitle">Associate Professor (HDR) - Biostatistics</p>
+            <p class="institution-main">Université Paris Cité - Faculty of Health - School of Medicine</p>
+        {% endif %}
+              
         <div class="contact-info">
     <div class="contact-item">
         <svg width="1em" height="1em" fill="#A6CE39" viewBox="0 0 24 24">
