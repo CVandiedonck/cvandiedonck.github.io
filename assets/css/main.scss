@@ -147,7 +147,7 @@ body {
     margin-bottom: 20px;
 }
 
-// Header pleine largeur - STRUCTURE SIMPLE
+// Header pleine largeur - STRUCTURE EN GRID
 .header {
     background: linear-gradient(45deg, #2c3e50, #34495e);
     color: white;
@@ -163,9 +163,11 @@ body {
         z-index: 2;
         max-width: 700px;
         margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 3rem;
+        display: grid;
+        grid-template-columns: 130px 1fr 200px;
+        grid-template-rows: auto auto;
+        gap: 2rem;
+        align-items: start;
     }
 
     .profile-img {
@@ -183,6 +185,9 @@ body {
         overflow: hidden;
         position: relative;
         flex-shrink: 0;
+        grid-column: 1;
+        grid-row: 1 / -1; // Prend toute la hauteur
+        justify-self: start;
 
         img {
             width: 100%;
@@ -197,8 +202,10 @@ body {
     }
 
     .name-section {
-        flex: 1;
+        grid-column: 2;
+        grid-row: 1;
         text-align: center;
+        align-self: start;
 
         h1 {
             font-size: 2.5rem;
@@ -221,13 +228,15 @@ body {
     }
 }
 
-// Contact info
+// Contact info - à droite
 .contact-info {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
 
     .contact-item {
         display: flex;
@@ -250,13 +259,15 @@ body {
     }
 }
 
-// Quick links
+// Quick links - en bas et centrés
 .quick-links {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    grid-column: 1 / -1; // Prend toute la largeur
+    grid-row: 2;
 
     .quick-link {
         background: rgba(255, 255, 255, 0.2);
