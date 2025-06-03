@@ -152,7 +152,7 @@ body {
     background: linear-gradient(45deg, #2c3e50, #34495e);
     color: white;
     padding: 1.5rem;
-    text-align: center;
+    text-align: left; // ← CHANGÉ de center à left
     position: relative;
     overflow: hidden;
     width: 100vw;
@@ -164,36 +164,34 @@ body {
         z-index: 2;
         max-width: 700px;
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: 130px 1fr; // ← Photo | Tout le reste
+        gap: 2rem;
+        align-items: start; // ← Alignement en haut
     }
 
     .name-section {
-       display: grid;
-       grid-template-columns: 130px 1fr;
-       align-items: center;
-        gap: 2rem;
-        margin-bottom: 0.5rem;  
+        // Cette section devient le contenu texte (colonne 2)
+        text-align: center; // ← Tout centré dans cette zone
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.3rem 0; // ← Réduit l'espace après le nom
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-    
-    h1 {
-       font-size: 2.5rem;
-        margin: 0;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        text-align: center;           
-        width: 100%;
-    }
 
-    .subtitle {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        margin-bottom: 0.3rem;
-    }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0.3rem;
+        }
 
-    .institution-main {
-        font-size: 1rem;
-        opacity: 0.8;
-        margin-bottom: 1rem;
-        font-style: italic;
-        text-align: center;
+        .institution-main {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
     }
 }
 
@@ -213,6 +211,9 @@ body {
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
+    grid-column: 1; // ← Force dans la première colonne
+    grid-row: 1 / -1; // ← Prend toute la hauteur
+    align-self: center; // ← Centré verticalement
 
     img {
         width: 100%;
@@ -233,6 +234,7 @@ body {
     gap: 2rem;
     flex-wrap: wrap;
     margin-top: 1rem;
+    grid-column: 2; // ← Dans la colonne texte
 
     .contact-item {
         display: flex;
