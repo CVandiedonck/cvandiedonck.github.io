@@ -1,4 +1,31 @@
-title: Claire Vandiedonck
-author:
-  name: Claire Vandiedonck
-  photo: /assets/images/profile.jpg
+# Configuration multilingue
+languages: ["fr", "en"]
+default_lang: "fr"
+exclude_from_localization: ["assets", "css", "js", "images"]
+
+# URLs et navigation
+baseurl: ""
+url: "https://cvandiedonck.github.io"
+
+# Métadonnées par langue
+t:
+  fr:
+    site_title: "Claire Vandiedonck"
+    site_description: "Maître de Conférences Hors Classe (HDR) - Biostatistiques"
+    nav_home: "Accueil"
+    nav_about: "À propos"
+    nav_research: "Recherche"
+    nav_publications: "Publications"
+    nav_teaching: "Enseignement"
+    nav_contact: "Contact"
+    lang_switch: "English"
+  en:
+    site_title: "Claire Vandiedonck"
+    site_description: "Associate Professor (HDR) - Biostatistics"
+    nav_home: "Home"
+    nav_about: "About"
+    nav_research: "Research"
+    nav_publications: "Publications"
+    nav_teaching: "Teaching"
+    nav_contact: "Contact"
+    lang_switch: "Français"
