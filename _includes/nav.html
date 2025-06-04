@@ -1,24 +1,154 @@
-<nav class="nav">
-    <ul>
-        {% assign current_lang = page.lang | default: site.default_lang %}
-        {% for item in site.navigation %}
-            <li>
-                {% if current_lang == 'fr' %}
-                    {% assign nav_title = item.title.fr %}
-                {% else %}
-                    {% assign nav_title = item.title.en %}
-                {% endif %}
-                
-                {% comment %} Determine if this is the current page {% endcomment %}
-                {% assign current_class = "" %}
-                {% if page.url == item.url or page.url contains item.url and item.url != "/" %}
-                    {% assign current_class = " current" %}
-                {% endif %}
-                
-                <a href="{{ item.url | relative_url }}" class="nav-link{{ current_class }}">
-                    {{ nav_title }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+<nav class="main-navigation">
+  {% assign current_lang = page.lang | default: site.default_lang %}
+  
+  <ul class="nav-list">
+    {% if current_lang == 'fr' %}
+      <!-- Navigation française -->
+      <li class="nav-item">
+        <a href="/" class="nav-link {% if page.ref == 'home' %}active{% endif %}">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a href="/parcours" class="nav-link {% if page.ref == 'journey' %}active{% endif %}">Parcours</a>
+      </li>
+      <li class="nav-item">
+        <a href="/recherche" class="nav-link {% if page.ref == 'research' %}active{% endif %}">Recherche</a>
+      </li>
+      <li class="nav-item">
+        <a href="/production-scientifique" class="nav-link {% if page.ref == 'scientific-output' %}active{% endif %}">Production Scientifique</a>
+      </li>
+      <li class="nav-item">
+        <a href="/enseignement" class="nav-link {% if page.ref == 'teaching' %}active{% endif %}">Enseignement & Pédagogie</a>
+      </li>
+      <li class="nav-item">
+        <a href="/sciences-societe" class="nav-link {% if page.ref == 'science-society' %}active{% endif %}">Sciences & Société</a>
+      </li>
+      <li class="nav-item">
+        <a href="/liens" class="nav-link {% if page.ref == 'links' %}active{% endif %}">Liens</a>
+      </li>
+      <li class="nav-item">
+        <a href="/contact" class="nav-link {% if page.ref == 'contact' %}active{% endif %}">Contact</a>
+      </li>
+    {% else %}
+      <!-- Navigation anglaise -->
+      <li class="nav-item">
+        <a href="/en/" class="nav-link {% if page.ref == 'home' %}active{% endif %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/background" class="nav-link {% if page.ref == 'journey' %}active{% endif %}">Background</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/research" class="nav-link {% if page.ref == 'research' %}active{% endif %}">Research</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/scientific-output" class="nav-link {% if page.ref == 'scientific-output' %}active{% endif %}">Scientific Output</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/teaching" class="nav-link {% if page.ref == 'teaching' %}active{% endif %}">Teaching & Pedagogy</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/science-society" class="nav-link {% if page.ref == 'science-society' %}active{% endif %}">Science & Society</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/links" class="nav-link {% if page.ref == 'links' %}active{% endif %}">Links</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/contact" class="nav-link {% if page.ref == 'contact' %}active{% endif %}">Contact</a>
+      </li>
+    {% endif %}
+  </ul>
 </nav>
+
+<style>
+.main-navigation {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: rgba(52, 152, 219, 0.1);
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background: #3498db;
+  color: white;
+}
+
+.nav-link.active:hover {
+  background: #2980b9;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .nav-link {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    gap: 0.2rem;
+    padding: 0 1rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .nav-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .nav-item {
+    flex-shrink: 0;
+  }
+}
+</style>
