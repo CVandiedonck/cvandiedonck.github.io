@@ -1,5 +1,5 @@
 <nav class="main-navigation">
-  {% assign current_lang = page.lang | default: site.default_lang %}
+  {% assign current_lang = 'fr' %}
   {% if page.url contains '/en/' %}
     {% assign current_lang = 'en' %}
   {% endif %}
