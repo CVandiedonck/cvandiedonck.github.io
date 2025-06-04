@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
     <!-- NOUVEAU CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/header-background.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/header-background.css' | relative_url }}">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
@@ -33,18 +33,6 @@
 <body class="{{ page.lang | default: site.default_lang | default: 'fr' }}">
     
     <div class="container">
-        <!-- Bannière de construction -->
-        <div class="construction-banner">
-            <div class="construction-content">
-                <span class="construction-icon">🚧</span>
-                <div class="construction-text">
-                    <strong>{% if page.lang == 'fr' %}Site en construction{% else %}Website under construction{% endif %}</strong>
-                    <p>{% if page.lang == 'fr' %}Ce site est actuellement en cours de développement. Toutes les sections ne sont pas encore disponibles.{% else %}This website is currently under development. Not all sections are available yet.{% endif %}</p>
-                </div>
-                <span class="construction-icon">🚧</span>
-            </div>
-        </div>
-        
         {% include nav.html %}
         {% include header.html %}
         
