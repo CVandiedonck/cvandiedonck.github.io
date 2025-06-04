@@ -1,67 +1,157 @@
-{% assign is_english = false %}
-{% if page.url contains '/en/' or page.lang == 'en' %}
-  {% assign is_english = true %}
-{% endif %}
-
-<nav class="site-nav">
-  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-  <label for="nav-trigger">
-    <span class="menu-icon">
-      <svg viewBox="0 0 18 15" width="18px" height="15px">
-        <path d="m18,1.484c0,0.82-0.665,1.484-1.484,1.484h-15.032c-0.819,0-1.484-0.665-1.484-1.484s0.665-1.484,1.484-1.484h15.032c0.819,0,1.484,0.665,1.484,1.484zm0,5.16c0,0.82-0.665,1.484-1.484,1.484h-15.032c-0.819,0-1.484-0.665-1.484-1.484s0.665-1.484,1.484-1.484h15.032c0.819,0,1.484,0.665,1.484,1.484zm0,5.158c0,0.82-0.665,1.484-1.484,1.484h-15.032c-0.819,0-1.484-0.665-1.484-1.484s0.665-1.484,1.484-1.484h15.032c0.819,0,1.484,0.665,1.484,1.484z"/>
-      </svg>
-    </span>
-  </label>
-
-  <div class="trigger">
-    {% if is_english %}
-      <a class="page-link" href="{{ '/en/' | relative_url }}">Home</a>
-      <a class="page-link" href="{{ '/en/about/' | relative_url }}">About</a>
-      <a class="page-link" href="{{ '/en/research/' | relative_url }}">Research</a>
-      <a class="page-link" href="{{ '/en/publications/' | relative_url }}">Publications</a>
-      <a class="page-link" href="{{ '/en/teaching/' | relative_url }}">Teaching</a>
-      <a class="page-link" href="{{ '/en/contact/' | relative_url }}">Contact</a>
+<nav class="main-navigation">
+  {% assign current_lang = page.lang | default: site.default_lang %}
+  {% if page.url contains '/en/' %}
+    {% assign current_lang = 'en' %}
+  {% endif %}
+  
+  <ul class="nav-list">
+    {% if current_lang == 'fr' %}
+      <!-- Navigation française -->
+      <li class="nav-item">
+        <a href="/" class="nav-link {% if page.ref == 'home' %}active{% endif %}">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a href="/parcours" class="nav-link {% if page.ref == 'journey' %}active{% endif %}">Parcours</a>
+      </li>
+      <li class="nav-item">
+        <a href="/recherche" class="nav-link {% if page.ref == 'research' %}active{% endif %}">Recherche</a>
+      </li>
+      <li class="nav-item">
+        <a href="/production-scientifique" class="nav-link {% if page.ref == 'scientific-output' %}active{% endif %}">Production Scientifique</a>
+      </li>
+      <li class="nav-item">
+        <a href="/enseignement" class="nav-link {% if page.ref == 'teaching' %}active{% endif %}">Enseignement & Pédagogie</a>
+      </li>
+      <li class="nav-item">
+        <a href="/sciences-societe" class="nav-link {% if page.ref == 'science-society' %}active{% endif %}">Sciences & Société</a>
+      </li>
+      <li class="nav-item">
+        <a href="/liens" class="nav-link {% if page.ref == 'links' %}active{% endif %}">Liens</a>
+      </li>
+      <li class="nav-item">
+        <a href="/contact" class="nav-link {% if page.ref == 'contact' %}active{% endif %}">Contact</a>
+      </li>
     {% else %}
-      <a class="page-link" href="{{ '/' | relative_url }}">Accueil</a>
-      <a class="page-link" href="{{ '/parcours/' | relative_url }}">Mon Parcours</a>
-      <a class="page-link" href="{{ '/recherche/' | relative_url }}">Recherche</a>
-      <a class="page-link" href="{{ '/publications/' | relative_url }}">Publications</a>
-      <a class="page-link" href="{{ '/enseignement/' | relative_url }}">Enseignement</a>
-      <a class="page-link" href="{{ '/contact/' | relative_url }}">Contact</a>
+      <!-- Navigation anglaise -->
+      <li class="nav-item">
+        <a href="/en/" class="nav-link {% if page.ref == 'home' %}active{% endif %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/background" class="nav-link {% if page.ref == 'journey' %}active{% endif %}">Background</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/research" class="nav-link {% if page.ref == 'research' %}active{% endif %}">Research</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/scientific-output" class="nav-link {% if page.ref == 'scientific-output' %}active{% endif %}">Scientific Output</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/teaching" class="nav-link {% if page.ref == 'teaching' %}active{% endif %}">Teaching & Pedagogy</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/science-society" class="nav-link {% if page.ref == 'science-society' %}active{% endif %}">Science & Society</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/links" class="nav-link {% if page.ref == 'links' %}active{% endif %}">Links</a>
+      </li>
+      <li class="nav-item">
+        <a href="/en/contact" class="nav-link {% if page.ref == 'contact' %}active{% endif %}">Contact</a>
+      </li>
     {% endif %}
-    
-    <span class="language-selector">
-      {% if is_english %}
-        <a class="lang-link" href="{{ page.url | replace: '/en/', '/' | relative_url }}" title="Version française">FR</a>
-        <span>|</span>
-        <span class="lang-link active" title="Version anglaise">EN</span>
-      {% else %}
-        <span class="lang-link active" title="Version française">FR</span>
-        <span>|</span>
-        <a class="lang-link" href="{{ '/en' | append: page.url | relative_url }}" title="English version">EN</a>
-      {% endif %}
-    </span>
-  </div>
+  </ul>
 </nav>
 
 <style>
-.language-selector {
-  border-left: 1px solid #e8e8e8;
-  padding-left: 10px;
-  margin-left: 10px;
+.main-navigation {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 0;
 }
 
-.language-selector .lang-link {
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #2c3e50;
   text-decoration: none;
-  margin: 0 2px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.language-selector .lang-link.active {
-  font-weight: bold;
-  text-decoration: underline;
+.nav-link:hover {
+  background: rgba(52, 152, 219, 0.1);
+  color: #2980b9;
+  text-decoration: none;
 }
 
-.language-selector .lang-link:not(.active) {
-  opacity: 0.7;
+.nav-link.active {
+  background: #3498db;
+  color: white;
+}
+
+.nav-link.active:hover {
+  background: #2980b9;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .nav-link {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    gap: 0.2rem;
+    padding: 0 1rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .nav-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .nav-item {
+    flex-shrink: 0;
+  }
 }
 </style>
