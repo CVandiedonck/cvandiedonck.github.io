@@ -25,12 +25,7 @@ description: "Claire Vandiedonck, Maître de Conférences en Biostatistiques à 
   <p>Après un doctorat à l'Université Paris Descartes sur la génétique de la myasthénie autoimmune, j'ai effectué un postdoctorat de 5 ans au <a href="https://www.chg.ox.ac.uk/" target="_blank">Wellcome Trust Centre for Human Genetics</a> d'Oxford , où mes travaux ont abouti à la première carte de transcription du Complexe Majeur d'Histocompatibilité humain.</p>
 
   <p>Depuis 2011, j'adopte des approches de génétique multifactorielle, génétique intégrative et multi-omiques pour identifier les variants génétiques et biomarqueurs associés à la prédisposition au diabète et aux risques de complications chroniques. Je suis également très impliquée dans l'innovation pédagogique avec le développement de la plateforme <a href="https://plasmabio.org/" target="_blank">PLASMA</a> pour l'enseignement de l'analyse de données massives.</p>
-  {% else %}
-  <p>I am an Associate Professor (Hors Classe) in Biostatistics at the Faculty of Medicine, <a href="https://u-paris.fr/" target="_blank">Université Paris Cité</a> and member of the <a href="https://www.immediab.com/" target="_blank">IMMEDIAB</a> team at Institut Necker Enfants Malades <a href="https://www.institut-necker-enfants-malades.fr/" target="_blank">(INEM)</a>. My research focuses on the genetics and genomics of autoimmune and inflammatory diseases, particularly type 1 diabetes.</p>
-  
-  <p>After a PhD at Université Paris Descartes on the genetics of autoimmune myasthenia gravis, I completed a 5-year postdoc at the <a href="https://www.chg.ox.ac.uk/" target="_blank">Wellcome Trust Centre for Human Genetics</a> in Oxford, where my work resulted in the first transcription map of the human Major Histocompatibility Complex.</p>
 
-  <p>Since 2011, I use multifactorial genetics, integrative genetics, and multi-omics approaches to identify genetic variants and biomarkers associated with diabetes predisposition and chronic complication risks. I am also deeply involved in pedagogical innovation with the development of the <a href="https://plasmabio.org/" target="_blank">PLASMA</a> platform for teaching massive data analysis.</p>
   {% endif %}
 
   <div class="timeline">
