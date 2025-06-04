@@ -31,6 +31,12 @@
       <li class="nav-item">
         <a href="/contact" class="nav-link {% if page.ref == 'contact' %}active{% endif %}">Contact</a>
       </li>
+      <!-- Sélecteur de langue -->
+      <li class="nav-item language-selector">
+        <span class="lang-current">🇫🇷 FR</span>
+        <span class="lang-separator">|</span>
+        <a href="/en{{ page.url }}" class="lang-link">🇬🇧 EN</a>
+      </li>
     {% else %}
       <!-- Navigation anglaise -->
       <li class="nav-item">
@@ -56,6 +62,12 @@
       </li>
       <li class="nav-item">
         <a href="/en/contact" class="nav-link {% if page.ref == 'contact' %}active{% endif %}">Contact</a>
+      </li>
+      <!-- Sélecteur de langue -->
+      <li class="nav-item language-selector">
+        <a href="{{ page.url | replace: '/en/', '/' | replace: '/en', '/' }}" class="lang-link">🇫🇷 FR</a>
+        <span class="lang-separator">|</span>
+        <span class="lang-current">🇬🇧 EN</span>
       </li>
     {% endif %}
   </ul>
@@ -153,5 +165,33 @@
   .nav-item {
     flex-shrink: 0;
   }
+}
+
+/* Styles pour le sélecteur de langue */
+.language-selector {
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.lang-current {
+  font-weight: bold;
+  color: #3498db;
+}
+
+.lang-separator {
+  margin: 0 0.5rem;
+  color: #bdc3c7;
+}
+
+.lang-link {
+  color: #7f8c8d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.lang-link:hover {
+  color: #2c3e50;
+  text-decoration: none;
 }
 </style>
