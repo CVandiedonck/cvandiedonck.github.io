@@ -8,44 +8,62 @@
             <!-- Institutions principales -->
             <div class="logo-section">
                 <div class="logo-item">
-                    <img src="/assets/images/logos/universite-paris-cite.jpg" alt="Université Paris Cité" class="institutional-logo">
-                    <span>Université Paris Cité</span>
+                    <a href="https://u-paris.fr/" target="_blank" class="institution-link">
+                        <img src="/assets/images/logos/universite-paris-cite.jpg" alt="Université Paris Cité" class="institutional-logo">
+                        <span>Université Paris Cité</span>
+                    </a>
                 </div>
                 <div class="logo-item">
-                    <img src="/assets/images/logos/inserm.jpg" alt="INSERM" class="institutional-logo">
-                    <span>INSERM U1151</span>
+                    <a href="https://www.inserm.fr/" target="_blank" class="institution-link">
+                        <img src="/assets/images/logos/inserm.jpg" alt="INSERM" class="institutional-logo">
+                        <span>INSERM U1151</span>
+                    </a>
                 </div>
                 <div class="logo-item">
-                    <img src="/assets/images/logos/cnrs.png" alt="CNRS" class="institutional-logo">
-                    <span>CNRS UMR8253</span>
+                    <a href="https://www.cnrs.fr/" target="_blank" class="institution-link">
+                        <img src="/assets/images/logos/cnrs.png" alt="CNRS" class="institutional-logo">
+                        <span>CNRS UMR8253</span>
+                    </a>
                 </div>
                 <div class="logo-item">
-                    <img src="/assets/images/logos/inem.png" alt="INEM" class="institutional-logo">
-                    <span>INEM</span>
+                    <a href="https://www.inem.fr/" target="_blank" class="institution-link">
+                        <img src="/assets/images/logos/inem.png" alt="INEM" class="institutional-logo">
+                        <span>INEM</span>
+                    </a>
                 </div>
                 <div class="logo-item">
-                    <img src="/assets/images/logos/immediab.png" alt="IMMEDIAB" class="institutional-logo">
-                    <span>Équipe IMMEDIAB</span>
+                    <a href="https://www.immediab.com/" target="_blank" class="institution-link">
+                        <img src="/assets/images/logos/immediab.png" alt="IMMEDIAB" class="institutional-logo">
+                        <span>Équipe IMMEDIAB</span>
+                    </a>
                 </div>
             </div>
 
             <!-- Financeurs et partenaires -->
             <div class="logo-section">
                 <div class="logo-item">
-                    <img src="/assets/images/logos/ANR-logo-2021-complet.jpg" alt="ANR" class="institutional-logo">
-                    <span>ANR</span>
+                    <a href="https://anr.fr/" target="_blank" class="institution-link">
+                        <img src="/assets/images/logos/ANR-logo-2021-complet.jpg" alt="ANR" class="institutional-logo">
+                        <span>ANR</span>
+                    </a>
                 </div>
                 <div class="logo-item">
-                    <img src="/assets/images/logos/UniversiteParisCite_IdEx_F30.jpg" alt="IDEX Université Paris Cité" class="institutional-logo">
-                    <span>IDEX Paris Cité</span>
+                    <a href="https://u-paris.fr/idex/" target="_blank" class="institution-link">
+                        <img src="/assets/images/logos/UniversiteParisCite_IdEx_F30.jpg" alt="IDEX Université Paris Cité" class="institutional-logo">
+                        <span>IDEX Paris Cité</span>
+                    </a>
                 </div>
                 <div class="logo-item">
-                    <img src="/assets/images/logos/SFD.png" alt="Société Francophone du Diabète" class="institutional-logo">
-                    <span>SFD</span>
+                    <a href="https://www.societe-francophone-diabete.fr/" target="_blank" class="institution-link">
+                        <img src="/assets/images/logos/SFD.png" alt="Société Francophone du Diabète" class="institutional-logo">
+                        <span>SFD</span>
+                    </a>
                 </div>
                 <div class="logo-item">
-                    <img src="/assets/images/logos/logo-ajd-couleurs.svg" alt="Aide aux Jeunes Diabétiques" class="institutional-logo">
-                    <span>AJD</span>
+                    <a href="https://www.ajd-diabete.fr/" target="_blank" class="institution-link">
+                        <img src="/assets/images/logos/logo-ajd-couleurs.svg" alt="Aide aux Jeunes Diabétiques" class="institutional-logo">
+                        <span>AJD</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -122,3 +140,27 @@
         </div>
     </div>
 </footer>
+
+<style>
+.institution-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.institution-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.institution-link:hover .institutional-logo {
+    transform: scale(1.05);
+}
+
+.institution-link span {
+    color: inherit;
+}
+</style>
