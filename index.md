@@ -22,7 +22,7 @@ description: "Claire Vandiedonck, Maître de Conférences en Biostatistiques à 
   {% if page.lang == 'fr' %}
   <p>Je suis Maître de Conférences (Hors Classe) en Biostatistiques à l'UFR de Médecine de l'<a href="https://u-paris.fr/">Université Paris Cité</a> et membre de l'équipe <a href="https://www.immediab.com/" target="_blank">IMMEDIAB</a> à l'Institut Necker Enfants Malades <a href="https://www.institut-necker-enfants-malades.fr/">(INEM)</a>. Mes recherches portent sur la génétique et génomique des maladies autoimmunes et inflammatoires, en particulier le diabète de type 1.</p>
   
-  <p>Après un doctorat à l'Université Paris Descartes sur la génétique de la myasthénie autoimmune, j'ai effectué un postdoctorat de 5 ans au <a href="https://www.chg.ox.ac.uk/">Wellcome Trust Centre for Human Genetics</a>à d'Oxford , où mes travaux ont abouti à la première carte de transcription du Complexe Majeur d'Histocompatibilité humain.</p>
+  <p>Après un doctorat à l'Université Paris Descartes sur la génétique de la myasthénie autoimmune, j'ai effectué un postdoctorat de 5 ans au <a href="https://www.chg.ox.ac.uk/">Wellcome Trust Centre for Human Genetics</a> d'Oxford , où mes travaux ont abouti à la première carte de transcription du Complexe Majeur d'Histocompatibilité humain.</p>
 
   <p>Depuis 2011, j'adopte des approches de génétique multifactorielle, génétique intégrative et multi-omiques pour identifier les variants génétiques et biomarqueurs associés à la prédisposition au diabète et aux risques de complications chroniques. Je suis également très impliquée dans l'innovation pédagogique avec le développement de la plateforme <a href="https://plasmabio.org/">PLASMA</a> pour l'enseignement de l'analyse de données massives.</p>
   {% else %}
