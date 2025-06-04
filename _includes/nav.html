@@ -15,18 +15,21 @@
 
   <div class="trigger">
     {% if is_english %}
-      <!-- Menu anglais -->
-      
-      <!-- Vos liens de menu anglais existants ici -->
-      <!-- Remplacez par vos liens actuels du menu anglais -->
-      
+      <a class="page-link" href="{{ '/en/' | relative_url }}">Home</a>
+      <a class="page-link" href="{{ '/en/about/' | relative_url }}">About</a>
+      <a class="page-link" href="{{ '/en/research/' | relative_url }}">Research</a>
+      <a class="page-link" href="{{ '/en/publications/' | relative_url }}">Publications</a>
+      <a class="page-link" href="{{ '/en/teaching/' | relative_url }}">Teaching</a>
+      <a class="page-link" href="{{ '/en/contact/' | relative_url }}">Contact</a>
     {% else %}
-      <!-- Vos liens de menu français existants ici -->
-      <!-- Remplacez par vos liens actuels du menu français -->
-      
+      <a class="page-link" href="{{ '/' | relative_url }}">Accueil</a>
+      <a class="page-link" href="{{ '/parcours/' | relative_url }}">Mon Parcours</a>
+      <a class="page-link" href="{{ '/recherche/' | relative_url }}">Recherche</a>
+      <a class="page-link" href="{{ '/publications/' | relative_url }}">Publications</a>
+      <a class="page-link" href="{{ '/enseignement/' | relative_url }}">Enseignement</a>
+      <a class="page-link" href="{{ '/contact/' | relative_url }}">Contact</a>
     {% endif %}
     
-    <!-- Sélecteur de langue pour les deux versions -->
     <span class="language-selector">
       {% if is_english %}
         <a class="lang-link" href="{{ page.url | replace: '/en/', '/' | relative_url }}" title="Version française">FR</a>
@@ -38,12 +41,10 @@
         <a class="lang-link" href="{{ '/en' | append: page.url | relative_url }}" title="English version">EN</a>
       {% endif %}
     </span>
-    {% endif %}
   </div>
 </nav>
 
 <style>
-/* Style minimal pour le sélecteur de langue */
 .language-selector {
   border-left: 1px solid #e8e8e8;
   padding-left: 10px;
