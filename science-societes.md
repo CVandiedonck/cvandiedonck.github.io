@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Sciences & Société"
+title: "Science & Société"
 lang: fr
 ref: science-society
 ---
