@@ -20,42 +20,51 @@ Navigation multilingue pour Jekyll - Résout le problème de conflit sur la page
   <div class="trigger">
     {% if is_english %}
       <!-- Menu anglais -->
-      <a class="page-link{% if page.url == '/en/' %} current{% endif %}" href="{{ '/en/' | relative_url }}">Home</a>
-      <a class="page-link{% if page.url == '/en/about/' %} current{% endif %}" href="{{ '/en/about/' | relative_url }}">About</a>
-      <a class="page-link{% if page.url == '/en/research/' %} current{% endif %}" href="{{ '/en/research/' | relative_url }}">Research</a>
-      <a class="page-link{% if page.url == '/en/publications/' %} current{% endif %}" href="{{ '/en/publications/' | relative_url }}">Publications</a>
-      <a class="page-link{% if page.url == '/en/teaching/' %} current{% endif %}" href="{{ '/en/teaching/' | relative_url }}">Teaching</a>
-      <a class="page-link{% if page.url == '/en/contact/' %} current{% endif %}" href="{{ '/en/contact/' | relative_url }}">Contact</a>
       
-      <!-- Lien vers version française -->
-      <a class="page-link lang-switch" href="{{ page.url | replace: '/en/', '/' | relative_url }}" title="Version française">🇫🇷 FR</a>
+      <!-- Vos liens de menu anglais existants ici -->
+      <!-- Remplacez par vos liens actuels du menu anglais -->
+      
     {% else %}
-      <!-- Menu français -->
-      <a class="page-link{% if page.url == '/' or page.url == '/index.html' %} current{% endif %}" href="{{ '/' | relative_url }}">Accueil</a>
-      <a class="page-link{% if page.url == '/parcours/' %} current{% endif %}" href="{{ '/parcours/' | relative_url }}">Mon Parcours</a>
-      <a class="page-link{% if page.url == '/recherche/' %} current{% endif %}" href="{{ '/recherche/' | relative_url }}">Recherche</a>
-      <a class="page-link{% if page.url == '/publications/' %} current{% endif %}" href="{{ '/publications/' | relative_url }}">Publications</a>
-      <a class="page-link{% if page.url == '/enseignement/' %} current{% endif %}" href="{{ '/enseignement/' | relative_url }}">Enseignement</a>
-      <a class="page-link{% if page.url == '/contact/' or page.url == '/contact' %} current{% endif %}" href="{{ '/contact/' | relative_url }}">Contact</a>
+      <!-- Vos liens de menu français existants ici -->
+      <!-- Remplacez par vos liens actuels du menu français -->
       
-      <!-- Lien vers version anglaise -->
-      <a class="page-link lang-switch" href="{{ '/en' | append: page.url | relative_url }}" title="English version">🇬🇧 EN</a>
+    {% endif %}
+    
+    <!-- Sélecteur de langue pour les deux versions -->
+    <span class="language-selector">
+      {% if is_english %}
+        <a class="lang-link" href="{{ page.url | replace: '/en/', '/' | relative_url }}" title="Version française">FR</a>
+        <span>|</span>
+        <span class="lang-link active" title="Version anglaise">EN</span>
+      {% else %}
+        <span class="lang-link active" title="Version française">FR</span>
+        <span>|</span>
+        <a class="lang-link" href="{{ '/en' | append: page.url | relative_url }}" title="English version">EN</a>
+      {% endif %}
+    </span>
     {% endif %}
   </div>
 </nav>
 
 <style>
-/* Style pour les liens de changement de langue */
-.lang-switch {
-  font-weight: bold;
+/* Style minimal pour le sélecteur de langue */
+.language-selector {
   border-left: 1px solid #e8e8e8;
-  padding-left: 10px !important;
+  padding-left: 10px;
   margin-left: 10px;
 }
 
-/* Indiquer la page courante */
-.page-link.current {
+.language-selector .lang-link {
+  text-decoration: none;
+  margin: 0 2px;
+}
+
+.language-selector .lang-link.active {
   font-weight: bold;
-  color: #2a7ae4;
+  text-decoration: underline;
+}
+
+.language-selector .lang-link:not(.active) {
+  opacity: 0.7;
 }
 </style>
