@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sciences & Société"
-lang: fr                  
+lang: fr                  https://github.com/CVandiedonck/cvandiedonck.github.io/tree/main
 ref: science-society
 ---
 
